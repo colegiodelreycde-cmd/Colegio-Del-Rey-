@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Colegio Del Rey | Ciudad del Este</title>
+  <meta name="description" content="Colegio Del Rey en Ciudad del Este: educación integral, valores, innovación y formación para el futuro." />
+  <style>
+    :root{
+      --azul: #0d3b73;
+      --azul-oscuro: #082b4d;
+      --naranja: #f28c28;
+      --naranja-claro: #ffd9a8;
+      --blanco: #ffffff;
+      --gris-fondo: #f4f7fb;
+      --gris-texto: #53657b;
+      --borde: #e9edf3;
+      --sombra: 0 12px 30px rgba(13,59,115,0.12);
+      --radio: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--blanco);
+      color: var(--azul-oscuro);
+      line-height:1.6;
+    }
+
+    a{ text-decoration:none; color:inherit; }
+    img{ max-width:100%; display:block; }
+    input, textarea, button{ font: inherit; }
+
+    .container{
+      width:min(1120px, 90%);
+      margin:0 auto;
+    }
+
+    .section{
+      padding: 90px 0;
+    }
+
+    .section-head{
+      text-align:center;
+      max-width:760px;
+      margin:0 auto 42px;
+    }
+
+    .section-head h2{
+      margin:0 0 12px;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--azul);
+    }
+
+    .section-head p{
+      margin:0;
+      color: var(--gris-texto);
+      font-size:1.05rem;
+    }
+
+    .btn{
+      display:inline-block;
+      padding: 14px 26px;
+      border-radius:999px;
+      font-weight:700;
+      transition:.2s ease;
+      border:none;
+      cursor:pointer;
+      text-align:center;
+    }
+
+    .btn-primary{
+      background: var(--naranja);
+      color: var(--azul-oscuro);
+    }
+
+    .btn-primary:hover{
+      transform: translateY(-2px);
+      box-shadow: var(--sombra);
+    }
+
+    .btn-secondary{
+      background: transparent;
+      border:1px solid rgba(255,255,255,.45);
+      color: var(--blanco);
+    }
+
+    header{
+      background: linear-gradient(135deg, var(--azul), var(--azul-oscuro));
+      color: var(--blanco);
+      position: sticky;
+      top:0;
+      z-index:100;
+      box-shadow: 0 5px 18px rgba(0,0,0,.08);
+    }
+
+    .nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      min-height:80px;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:700;
+      font-size:1.1rem;
+      letter-spacing:.02em;
+    }
+
+    .logo-mark{
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      background: var(--naranja);
+      color: var(--azul);
+      display:grid;
+      place-items:center;
+      font-weight:700;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:26px;
+      font-size:0.96rem;
+    }
+
+    .nav-links a{
+      opacity:.9;
+      transition:.2s ease;
+    }
+
+    .nav-links a:hover{
+      opacity:1;
+    }
+
+    .hero{
+      background:
+        linear-gradient(120deg, rgba(13,59,115,.92), rgba(13,59,115,.8)),
+        url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: var(--blanco);
+      padding: 100px 0 90px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap:30px;
+      align-items:center;
+    }
+
+    .hero h1{
+      font-size: clamp(2.5rem, 5vw, 4.2rem);
+      line-height:1.08;
+      margin:0 0 18px;
+      letter-spacing:-.04em;
+    }
+
+    .hero p{
+      font-size:1.08rem;
+      max-width:620px;
+      opacity:.96;
+      margin:0 0 24px;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+
+    .hero-card{
+      background: rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.14);
+      backdrop-filter: blur(8px);
+      border-radius:24px;
+      padding:26px;
+      box-shadow: var(--sombra);
+    }
+
+    .hero-card h3{
+      margin:0 0 12px;
+      font-size:1.9rem;
+    }
+
+    .hero-card ul{
+      padding-left:20px;
+      margin:16px 0 0;
+      opacity:.96;
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns: repeat(3,1fr);
+      gap:18px;
+      margin-top:30px;
+    }
+
+    .stat{
+      background: rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:16px;
+      padding:18px;
+      text-align:center;
+    }
+
+    .stat strong{
+      display:block;
+      font-size:1.85rem;
+      color: var(--naranja-claro);
+    }
+
+    .about{
+      background: var(--gris-fondo);
+    }
+
+    .about-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:34px;
+      align-items:center;
+    }
+
+    .about-card{
+      background: var(--blanco);
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow: var(--sombra);
+    }
+
+    .about-card img{
+      width:100%;
+      height:420px;
+      object-fit:cover;
+    }
+
+    .about-content{
+      padding:26px 16px 26px 0;
+    }
+
+    .about-content h3{
+      margin:0 0 12px;
+      color: var(--azul);
+      font-size:2rem;
+    }
+
+    .about-content p{
+      color: var(--gris-texto);
+      margin:0;
+    }
+
+    .about-content ul{
+      margin:18px 0 0;
+      padding-left:20px;
+      color: var(--gris-texto);
+    }
+
+    .values-grid{
+      display:grid;
+      grid-template-columns: repeat(4,1fr);
+      gap:22px;
+      margin-top:30px;
+    }
+
+    .value{
+      background: var(--blanco);
+      border:1px solid var(--borde);
+      border-radius:20px;
+      padding:28px 20px;
+      text-align:center;
+      box-shadow: 0 10px 24px rgba(13,59,115,.04);
+    }
+
+    .icon{
+      width:72px;
+      height:72px;
+      margin:0 auto 18px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background: rgba(242, 140, 40, .12);
+      color: var(--naranja);
+      font-size:1.9rem;
+      font-weight:700;
+    }
+
+    .value h3{
+      margin:0 0 10px;
+      color: var(--azul);
+      font-size:1.2rem;
+    }
+
+    .value p{
+      margin:0;
+      color: var(--gris-texto);
+    }
+
+    .programs-grid{
+      display:grid;
+      grid-template-columns: repeat(3,1fr);
+      gap:24px;
+      margin-top:26px;
+    }
+
+    .program{
+      background: var(--blanco);
+      border:1px solid var(--borde);
+      border-radius:22px;
+      overflow:hidden;
+      box-shadow: 0 10px 20px rgba(13,59,115,.04);
+    }
+
+    .program img{
+      width:100%;
+      height:200px;
+      object-fit:cover;
+    }
+
+    .program-body{
+      padding:24px 20px 28px;
+    }
+
+    .program-body h3{
+      margin:0 0 10px;
+      color: var(--azul);
+      font-size:1.4rem;
+    }
+
+    .program-body p{
+      margin:0;
+      color: var(--gris-texto);
+    }
+
+    .benefits{
+      background: linear-gradient(180deg, #fffaf5 0%, #f4f8ff 100%);
+    }
+
+    .benefits-grid{
+      display:grid;
+      grid-template-columns: repeat(4,1fr);
+      gap:22px;
+      margin-top:32px;
+    }
+
+    .benefit{
+      background: var(--blanco);
+      border:1px solid var(--borde);
+      border-radius:18px;
+      padding:26px 20px;
+      text-align:center;
+      box-shadow: 0 10px 20px rgba(13,59,115,.04);
+    }
+
+    .benefit strong{
+      display:block;
+      font-size:2.1rem;
+      color: var(--naranja);
+      margin-bottom:8px;
+    }
+
+    .benefit span{
+      color: var(--gris-texto);
+    }
+
+    .testimonials-grid{
+      display:grid;
+      grid-template-columns: repeat(3,1fr);
+      gap:24px;
+      margin-top:30px;
+    }
+
+    .testimonial{
+      background: var(--blanco);
+      border:1px solid var(--borde);
+      border-radius:20px;
+      padding:26px 22px;
+      box-shadow: 0 10px 18px rgba(13,59,115,.04);
+    }
+
+    .stars{
+      color: var(--naranja);
+      letter-spacing:2px;
+      margin-bottom:10px;
+      font-size:1.08rem;
+    }
+
+    .testimonial p{
+      margin:0 0 18px;
+      color: var(--gris-texto);
+    }
+
+    .person{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:700;
+      color: var(--azul);
+    }
+
+    .avatar{
+      width:44px;
+      height:44px;
+      border-radius:50%;
+      background: rgba(242,140,40,.15);
+      display:grid;
+      place-items:center;
+      color: var(--azul);
+      font-weight:700;
+    }
+
+    .admisiones{
+      background: var(--gris-fondo);
+    }
+
+    .admisiones-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:30px;
+      align-items:start;
+    }
+
+    .proceso{
+      background: var(--blanco);
+      border:1px solid var(--borde);
+      border-radius: var(--radio);
+      padding:26px;
+      box-shadow: 0 10px 18px rgba(13,59,115,.04);
+    }
+
+    .proceso h3{
+      margin-top:0;
+      font-size:1.6rem;
+      color: var(--azul);
+    }
+
+    .proceso ul{
+      margin:18px 0 0;
+      padding-left:20px;
+      color: var(--gris-texto);
+    }
+
+    .form-box{
+      background: var(--blanco);
+      border:1px solid var(--borde);
+      border-radius: var(--radio);
+      padding:26px;
+      box-shadow: 0 10px 18px rgba(13,59,115,.04);
+    }
+
+    .form-box h3{
+      margin:0 0 20px;
+      color: var(--azul);
+      font-size:1.6rem;
+    }
+
+    .campo{
+      display:grid;
+      gap:8px;
+      margin-bottom:18px;
+    }
+
+    .campo label{
+      font-weight:700;
+      color: var(--azul-oscuro);
+    }
+
+    .campo input,
+    .campo textarea{
+      width:100%;
+      padding:12px 14px;
+      border:1px solid #dfe7f0;
+      border-radius:12px;
+      background:#fff;
+      color: var(--azul-oscuro);
+      outline:none;
+    }
+
+    .campo input:focus,
+    .campo textarea:focus{
+      border-color: var(--naranja);
+      box-shadow: 0 0 0 3px rgba(242,140,40,.14);
+    }
+
+    .cta{
+      background: linear-gradient(135deg, var(--azul), var(--azul-oscuro));
+      color: var(--blanco);
+      text-align:center;
+    }
+
+    .cta-box{
+      background: rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.15);
+      border-radius:24px;
+      padding:40px 20px;
+      max-width:900px;
+      margin:0 auto;
+    }
+
+    .cta-box h2{
+      margin:0 0 16px;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+    }
+
+    .cta-box p{
+      margin:0 auto 24px;
+      max-width:680px;
+      opacity:.96;
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap:26px;
+      align-items:stretch;
+    }
+
+    .contact-card{
+      background: var(--blanco);
+      border:1px solid var(--borde);
+      border-radius:24px;
+      padding:26px;
+      box-shadow: 0 10px 18px rgba(13,59,115,.04);
+    }
+
+    .contact-card h3{
+      margin:0 0 18px;
+      color: var(--azul);
+      font-size:1.6rem;
+    }
+
+    .contact-list{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:grid;
+      gap:12px;
+      color: var(--gris-texto);
+    }
+
+    .map{
+      border-radius:24px;
+      overflow:hidden;
+      min-height:320px;
+      border:1px solid var(--borde);
+      box-shadow: 0 10px 18px rgba(13,59,115,.04);
+    }
+
+    .map iframe{
+      width:100%;
+      height:100%;
+      min-height:320px;
+      border:0;
+      display:block;
+    }
+
+    footer{
+      background: #0b2240;
+      color: rgba(255,255,255,.82);
+      padding: 38px 0;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap:24px;
+    }
+
+    .footer-brand h3{
+      margin:0 0 10px;
+      color: var(--blanco);
+      font-size:1.5rem;
+    }
+
+    .footer-col h4{
+      margin:0 0 12px;
+      color: var(--blanco);
+      font-size:1.05rem;
+    }
+
+    .footer-col ul{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:grid;
+      gap:8px;
+    }
+
+    .whatsapp{
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width: 62px;
+      height: 62px;
+      background: #25d366;
+      color: #fff;
+      border-radius: 50%;
+      display:grid;
+      place-items:center;
+      font-size:1.8rem;
+      font-weight:700;
+      box-shadow: 0 12px 24px rgba(37,211,102,.35);
+      z-index: 200;
+    }
+
+    @media (max-width: 900px){
+      .hero-grid,
+      .about-grid,
+      .values-grid,
+      .programs-grid,
+      .benefits-grid,
+      .testimonials-grid,
+      .admisiones-grid,
+      .contact-grid,
+      .footer-grid{
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-grid,
+      .admisiones-grid,
+      .contact-grid{
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links{
+        display:none;
+      }
+    }
+
+    @media (max-width: 620px){
+      .values-grid,
+      .programs-grid,
+      .benefits-grid,
+      .testimonials-grid,
+      .footer-grid{
+        grid-template-columns: 1fr;
+      }
+
+      .stats{
+        grid-template-columns: 1fr;
+      }
+
+      .hero{
+        padding-top:70px;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .hero-actions{
+        flex-direction:column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">
+        <div class="logo-mark">CR</div>
+        <span>Colegio Del Rey</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#niveles">Niveles</a>
+        <a href="#beneficios">Ventajas</a>
+        <a href="#admisiones">Admisiones</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <a class="btn btn-primary" href="#admisiones">Admisiones</a>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1>Educación de calidad para formar líderes del mañana.</h1>
+          <p>
+            En el Colegio Del Rey, en Ciudad del Este, acompañamos a cada estudiante con una educación
+            integral, cercana y moderna, para que crezca con confianza, valores y capacidad de aprender
+            de manera significativa.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#admisiones">Solicitar información</a>
+            <a class="btn btn-secondary" href="#nosotros">Conocer más</a>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <strong>25+</strong>
+              <span>Años de experiencia</span>
+            </div>
+            <div class="stat">
+              <strong>1,000+</strong>
+              <span>Estudiantes</span>
+            </div>
+            <div class="stat">
+              <strong>96%</strong>
+              <span>Familias satisfechas</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h3>Más que una escuela</h3>
+          <p>Un espacio donde cada alumno descubre talentos, fortalece valores y se prepara para un futuro exitoso.</p>
+          <ul>
+            <li>Aprendizaje innovador y dinámico</li>
+            <li>Atención personalizada</li>
+            <li>Formación en valores y convivencia</li>
+            <li>Desarrollo académico y emocional</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="nosotros" class="about">
+      <div class="container about-grid">
+        <div class="about-card">
+          <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80" alt="Aula del Colegio Del Rey">
+        </div>
+
+        <div class="about-content">
+          <h3>Una comunidad que educa con pasión</h3>
+          <p>
+            En Colegio Del Rey creemos en la formación de personas responsables, creativas, respetuosas
+            y preparadas para enfrentar los desafíos del futuro. Nuestra misión es acompañar a cada estudiante
+            en su proceso académico, personal y social.
+          </p>
+          <ul>
+            <li>Ambiente seguro y acogedor</li>
+            <li>Enfoque en valores y convivencia</li>
+            <li>Desarrollo académico y emocional</li>
+            <li>Compromiso con la excelencia</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <h2>Nuestros valores</h2>
+          <p>Fomentamos una educación basada en principios sólidos que acompañan a nuestros estudiantes toda la vida.</p>
+        </div>
+
+        <div class="values-grid">
+          <div class="value">
+            <div class="icon">✓</div>
+            <h3>Excelencia</h3>
+            <p>Buscamos el mejor desarrollo académico y personal de cada alumno.</p>
+          </div>
+
+          <div class="value">
+            <div class="icon">❤</div>
+            <h3>Respeto</h3>
+            <p>Promovemos una convivencia sana, empática y solidaria.</p>
+          </div>
+
+          <div class="value">
+            <div class="icon">★</div>
+            <h3>Responsabilidad</h3>
+            <p>Formamos hábitos de compromiso, esfuerzo y constancia.</p>
+          </div>
+
+          <div class="value">
+            <div class="icon">✦</div>
+            <h3>Creatividad</h3>
+            <p>Impulsamos la imaginación, el pensamiento crítico y la innovación.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="niveles" class="about">
+      <div class="container">
+        <div class="section-head">
+          <h2>Educación por etapas</h2>
+          <p>Ofrecemos un acompañamiento integral desde la infancia hasta la educación media.</p>
+        </div>
+
+        <div class="programs-grid">
+          <article class="program">
+            <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=800&q=80" alt="Primaria">
+            <div class="program-body">
+              <h3>Primaria</h3>
+              <p>Desarrollo de la curiosidad, autonomía y competencias básicas para aprender con gusto.</p>
+            </div>
+          </article>
+
+          <article class="program">
+            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80" alt="Secundaria">
+            <div class="program-body">
+              <h3>Secundaria</h3>
+              <p>Preparación académica sólida con enfoque en liderazgo, análisis y formación para el futuro.</p>
+            </div>
+          </article>
+
+          <article class="program">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Extracurriculares">
+            <div class="program-body">
+              <h3>Extraescolares</h3>
+              <p>Actividades deportivas, culturales y artísticas que fortalecen talentos y valores.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="beneficios" class="benefits">
+      <div class="container">
+        <div class="section-head">
+          <h2>¿Por qué elegirnos?</h2>
+          <p>Una experiencia educativa pensada para el bienestar, aprendizaje y crecimiento de cada estudiante.</p>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit">
+            <strong>100%</strong>
+            <span>Ambiente seguro</span>
+          </div>
+          <div class="benefit">
+            <strong>24/7</strong>
+            <span>Atención cercana</span>
+          </div>
+          <div class="benefit">
+            <strong>15+</strong>
+            <span>Actividades extracurriculares</span>
+          </div>
+          <div class="benefit">
+            <strong>8:1</strong>
+            <span>Relación ideal de acompañamiento</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="admisiones" class="admisiones">
+      <div class="container">
+        <div class="section-head">
+          <h2>Admisiones</h2>
+          <p>Un proceso sencillo, cercano y transparente para que tu familia conozca nuestra propuesta educativa.</p>
+        </div>
+
+        <div class="admisiones-grid">
+          <div class="proceso">
+            <h3>Proceso de inscripción</h3>
+            <ul>
+              <li>Solicitar información por WhatsApp o correo</li>
+              <li>Agendar entrevista con la institución</li>
+              <li>Recibir orientación sobre niveles y horarios</li>
+              <li>Completar la documentación requerida</li>
+              <li>Formalizar la inscripción y comenzar el año escolar</li>
+            </ul>
+          </div>
+
+          <div class="form-box">
+            <h3>Solicita información</h3>
+            <form>
+              <div class="campo">
+                <label for="nombre">Nombre completo</label>
+                <input id="nombre" type="text" placeholder="Tu nombre" />
+              </div>
+
+              <div class="campo">
+                <label for="email">Correo electrónico</label>
+                <input id="email" type="email" placeholder="correo@ejemplo.com" />
+              </div>
+
+              <div class="campo">
+                <label for="telefono">Teléfono</label>
+                <input id="telefono" type="tel" placeholder="+595 961 000 000" />
+              </div>
+
+              <div class="campo">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" rows="4" placeholder="Quiero información sobre admisiones..."></textarea>
+              </div>
+
+              <button class="btn btn-primary" type="submit">Enviar consulta</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonios">
+      <div class="container">
+        <div class="section-head">
+          <h2>Lo que dicen nuestras familias</h2>
+          <p>La confianza de nuestras familias es el mejor reflejo del trabajo que realizamos día a día.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p>“Excelente institución. El trato humano y la educación de calidad hacen que nuestros hijos estén felices y motivados.”</p>
+            <div class="person">
+              <div class="avatar">M</div>
+              <span>María Álvarez</span>
+            </div>
+          </div>
+
+          <div class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p>“Nos encanta cómo acompañan a los estudiantes, tanto en lo académico como en los valores. Muy recomendable.”</p>
+            <div class="person">
+              <div class="avatar">J</div>
+              <span>José Pérez</span>
+            </div>
+          </div>
+
+          <div class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p>“Un colegio con una excelente propuesta educativa, ambiente cordial y grandes oportunidades para crecer.”</p>
+            <div class="person">
+              <div class="avatar">A</div>
+              <span>Ana Gómez</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Contacto</h2>
+          <p>Estamos para responder tus dudas y ayudarte a conocer más de nuestra comunidad educativa.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Colegio Del Rey</h3>
+            <ul class="contact-list">
+              <li><strong>Dirección:</strong> Ciudad del Este, Paraguay</li>
+              <li><strong>Teléfono:</strong> +595 61 000 0000</li>
+              <li><strong>Correo:</strong> info@colegiodelrey.edu.py</li>
+              <li><strong>Horario:</strong> Lunes a Viernes, 7:30 - 17:30</li>
+            </ul>
+          </div>
+
+          <div class="map">
+            <iframe
+              src="https://www.google.com/maps?q=Ciudad%20del%20Este%20Paraguay&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="cta-box">
+          <h2>¡Inscríbete en el Colegio Del Rey!</h2>
+          <p>
+            Te invitamos a conocer nuestra propuesta educativa, procesos de admisión y a formar parte de una comunidad
+            que construye valores, sueños y futuro.
+          </p>
+          <a class="btn btn-primary" href="#admisiones">Solicitar información</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h3>Colegio Del Rey</h3>
+        <p>Formando estudiantes con valores, talento y sueños para el futuro.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li>Ciudad del Este, Paraguay</li>
+          <li>+595 61 000 0000</li>
+          <li>info@colegiodelrey.edu.py</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Enlaces</h4>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#niveles">Niveles</a></li>
+          <li><a href="#admisiones">Admisiones</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp" href="https://wa.me/595610000000" target="_blank" aria-label="WhatsApp">W</a>
+
+  <script>
+    document.querySelector("form").addEventListener("submit", function(e){
+      e.preventDefault();
+      alert("Gracias por contactarte con Colegio Del Rey. En breve te responderemos.");
+      this.reset();
+    });
+  </script>
+</body>
+</html>
